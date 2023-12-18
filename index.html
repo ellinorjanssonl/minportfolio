@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="icon" href="bilder/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <!-- Hamburger-menyn, visas endast på små skärmar -->
+        <button id="menu-toggle">&#9776; Meny</button>
+        <!-- Navigationsmeny -->
+        <nav>
+            <ul id="navbar">
+                <li><a href="#about"><i class="fa-solid fa-graduation-cap"></i><br>Om mig</a></li>
+                <li><a href="#projects"><i class="fa-solid fa-code fa"></i><br> Projekt</a></li>
+                <li><a href="#Intrests"><i class="fa-solid fa-palette"></i><br>Intressen</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-envelope"></i><br>Kontakt</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <section>
+    <div class="intro">
+        <h1>Hej, jag är <br><span class="highlight">Ellinor</span> Jansson Lande<br></h1>
+        <p>Studerar till <span class="highlight2">Frontend-utvecklare</span> med inriktning webbsäkerhet <br> på Jensens yrkeshögskola i Stockholm. 
+        </p> 
+    </div>
+        <div class="portrait">
+       <img src="bilder/linkedin.png" alt="Bild på mig1">   
+    </div>
+    </section>
+
+    <section id="about">
+        <div class="aboutme">
+            <img src="bilder/bildpamig.jpg" alt="Bild på mig">
+            <div class="info-wrapper">
+                <div class="textinfo">
+                    <h2><span class="highlight3">OM MIG</span></h2>
+                    <p>Välkommen till min portfolio. Här nedan kan du läsa om mina meriter inom programmering samt mina olika utbildningar.</p>
+                </div>
+                <div class="merits-container">
+                    <button class="toggle-content" data-target="#merits"><i class="fa-solid fa-laptop-code"></i>  Meriter</button>
+                    <div id="merits" class="content">
+                        <p>Merit 1</p>
+                        <p>Merit 2</p>
+                        <p>Merit 3</p>
+                    </div>
+                </div>
+                <div class="education-container">
+                    <button class="toggle-content" data-target="#education"><i class="fa-solid fa-graduation-cap"></i>  Utbildning</button>
+                    <div id="education" class="content">
+                        <p>Utbildning 1</p>
+                        <p>Utbildning 2</p>
+                        <p>Utbildning 3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="projects">
+        <h2>Projekt</h2>
+        <div class="project">
+            <h3>Projekt 1</h3>
+            <p>Beskrivning av projekt 1.</p>
+       
+        <h2>Projekt 2</h2>
+        <p>Beskrivning av projekt 2.</p>
+
+        <h2>Projekt 3</h2>
+        <p>Beskrivning av projekt 3.</p>
+
+        <h2>Projekt 4</h2>
+        <p>Beskrivning av projekt 4.</p>
+
+        </div>
+    <!-- Lägg till fler projekt här -->
+    </section>
+
+    <section id="Intrests">
+        <h2>Intressen</h2>
+        <div class="intrests">
+            <h3>Intresse 1</h3>
+            <p>Beskrivning av intresse 1.</p>
+        </div>
+        <div class="intrests">
+            <h3>Intresse 2</h3>
+            <p>Beskrivning av intresse 2.</p>
+        </div>
+        <div class="intrests">
+            <h3>Intresse 3</h3>
+            <p>Beskrivning av intresse 3.</p>
+        </div>
+
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Ditt Namn" required>
+            <input type="email" id="email" placeholder="Din E-post" required>
+            <textarea id="message" placeholder="Ditt Meddelande" required></textarea>
+            <button type="submit">Skicka</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Ditt Namn</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

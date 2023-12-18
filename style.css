@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    background-color: transparent;
+    scroll-behavior: smooth;
+    outline: none;
+}
+
+:root {
+    --primary-color: #c9cf70;
+    --secondary-color: #313131;
+    --background-color: #1e1e1e;
+    --border-color: #c9cf70;
+    --text-color: #ffffff;
+    --text-color-light: #ffffff;
+    --text-color-dark: #313131;
+    --text-color-highlight: #c9cf70;
+    --text-color-highlight-light: #c9cf70;
+    --text-color-highlight-dark: #313131;
+    --text-color-highlight-darker: #1e1e1e;
+    --text-color-highlight-darkest: #000000;
+    --text-color-highlight-transparent: rgba(201, 207, 112, 0.5);
+    --text-color-highlight-transparent-light: rgba(201, 207, 112, 0.2);
+    --text-color-highlight-transparent-dark: rgba(49, 49, 49, 0.5);
+    --text-color-highlight-transparent-darker: rgba(30, 30, 30, 0.5);
+}  
+
+
+body {
+    background: var(--secondary-color);
+    color: #ffffff;
+    overflow: hidden;
+    overflow-y:scroll;
+}
+
+header {
+    text-align: center;
+}
+
+/*----------------NAVBAR/LINKS------------------------*/
+
+i {
+    color:rgb(73, 214, 214);
+    text-shadow: #2f2f2f -2px -2px 2px;
+}
+
+.toggle-content i {
+    color:#c9cf70;
+    text-shadow: #2f2f2f -2px -2px 2px;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content:left;
+
+}
+nav ul li {
+    margin: 1rem; /* Redan existerande horisontellt mellanrum */
+    position: relative;
+    text-decoration: none;
+    padding: 2rem /* Lägg till vertikalt mellanrum */
+}
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    position: relative; /* Positionera pseudo-element relativt till länken */
+    display: inline-block; /* För att tillåta korrekt positionering av pseudo-element */
+}
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; /* Höjd på underline */
+    bottom: -5px; /* Position under texten */
+    left: 0;
+    background-color: #c9cf70;
+    visibility: hidden; /* Göm till en början */
+    transition: all 0.6s ease-in-out; /* Övergångseffekt */
+}
+nav ul li a:hover::after {
+    visibility: visible; /* Visa vid hover */
+    width: 100%; /* Expandera till full bredd */
+}
+
+
+/* ------------- Responsiv meny-------------------- */
+#menu-toggle {
+    display: none; /* Dölj toggle-knappen på större skärmar */
+    background: #c9cf70;
+    color: #1e1e1e;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+/*-----------------------INTRODUCTION---------------------*/
+.intro {
+    display:grid;
+    grid-template-rows: 1fr 2fr;
+    align-items:flex-start; 
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.intro h1 {
+    margin-top: 5%;
+    font-size: 4rem;
+    display: block;
+    justify-content: center;
+}
+
+.intro p {
+    font-size: 1rem;
+    display: block;
+    justify-content: center;
+}
+
+.portrait {
+    transition: opacity 0.5s ease-in-out; /* Lägger till en mjuk övergångseffekt */
+    opacity: 1; /* Startar med full opacitet */
+    position:fixed; /* Gör så att bilden håller sig på samma plats vid scroll */
+    top: 0;   
+    right: 0;
+    z-index: -10;
+    margin-top: 2%; 
+    width: 60%; 
+}
+
+.portrait img {
+    width: 100%; /* Gör så att bilden tar upp hela bredden av sin container */
+}
+.highlight {
+    color: var(--primary-color)/* Change this to the color you want */
+}
+
+.highlight2 {
+    color: rgb(73, 214, 214);
+    font-weight: 900;/* Change this to the color you want */
+}
+
+.highlight3 {
+    color:rgb(73, 214, 214);
+    text-shadow: #2f2f2f 1px 1px 1px;
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+/*--------------------------ABOUT ME-------------------------*/
+
+#about .aboutme {
+    display: flex; /* Adjust as needed */
+    align-items: center;
+    height: 65vh;
+    box-shadow: #1e1e1e 6px 2px 5px 2px;
+
+}
+
+#about .aboutme img {
+    width: 20%; /* Adjust the width as needed */
+    align-content: center;
+    border-radius: 50%;
+    margin-right: 10%; /* Space between image and text */
+    margin-left: 10%;
+    box-shadow: #242424 6px 6px 8px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+#about .info-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the space between the containers */
+}
+
+#about .merits-container, 
+#about .education-container {
+    flex-basis: calc(50% - 20px); /* Adjust width and subtract gap */
+    display: flex;
+    flex-direction: column;
+}
+
+#about .textinfo {
+    width: 100%;
+    margin-right: 10%;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;  
+}
+
+.textinfo p {
+    margin-top: 5%;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.content {
+    margin-bottom: 10%;/* Hide content */
+}
+
+.content p {
+    color:#ffffff;
+    margin-top: 2%;
+    text-align: center;
+    font-weight: 700;
+}
+
+#about .content {
+    display: none; /* Initially hide merits and education */
+}
+
+.toggle-content:hover{ 
+    background-color: rgb(73, 214, 214);
+    color: #1e1e1e;
+    transition: all 0.6s ease-in-out;
+    
+}
+
+.toggle-content {
+    position: relative; /* Set position context for pseudo-elements *//* Dark background */
+    padding: 5px 5px;
+    color:rgb(73, 214, 214);
+    font-weight: 700;
+    border-radius: 15px;
+    text-align: center;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
+    background-color: #3b3b3b;
+    box-shadow: #171717 2px 2px 5px;
+}
+
+/* ---------------------------------PROJECTS-------------------------------- */
+
+#projects {
+    margin-top: 20%;
+    display: flex; /* Adjust as needed */
+    align-items: center;
+    flex-direction: column;
+    height: 60vh;
+}
+#projects .projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the space between the containers */
+}
+
+#projects .project-container {
+    flex-basis: calc(50% - 20px); /* Adjust width and subtract gap */
+    display: flex;
+    flex-direction: column;
+}
+
+#projects .project-container img {
+    width: 100%; /* Adjust the width as needed */
+    border-radius: 10px;
+    box-shadow: #353535 6px 6px 8px;
+}
+
+#projects .project-container .project-info {
+    margin-top: 5%;
+    text-align: center;
+    color: #313131;
+    font-size: large; 
+    font-weight: 700;
+}
+
+#projects .project-container .project-info p {
+    margin-top: 5%;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+/* ---------------------------------CONTACT-------------------------------- */
+
+
+
+
+
+/* Stil för mindre skärmar (t.ex. iPad/iPhone) */
+@media screen and (max-width: 768px) {
+    
+    #menu-toggle {
+        display:block; /* Visa toggle-knappen */
+        float: left;
+        margin: 5%;
+    }
+
+    nav ul {
+        display: none; /* Dölj menyn till en början */
+        flex-direction: column; 
+        width: 100%;
+    }
+
+    nav ul li {
+        text-align: left;
+        margin: 7px 0; /* Ge lite utrymme mellan menyelementen */
+    }
+    .navbar-open {
+        display:flex; /* Visa menyn när den är öppen */
+    }
+
+    .intro {
+    display:grid;
+    width: 100%;
+    grid-template-rows: 1fr 2fr;
+    margin: 0 auto;
+    padding: 0 10%;
+  }
+
+    .intro h1 {
+        margin-top: 20%;
+        font-size: 4.5rem;
+        display: grid;
+        justify-content: center;
+    }
+
+    .intro p {
+        font-size: 1.8rem;
+        display: grid;
+        justify-content: center;
+    }
+
+    .portrait {
+        width: 100%; /* Gör så att bilden tar upp hela bredden av sin container */
+        height: 100vh;
+        display: block;
+        margin-top: 2%;
+        position:fixed; /* Gör så att bilden håller sig på samma plats vid scroll */
+    }
+
+    .portrait img {
+        width: auto; /* Gör så att bilden tar upp hela bredden av sin container */
+        height: 100vh;
+        display: block;
+    }
+
+
+    #about .aboutme {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        height: 75vh;
+    }
+
+    #about .aboutme img {
+        width: 40%; /* Adjust for smaller screen */
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 5%; /* Space between image and text */
+    }
+
+    #about .textinfo {
+        width: 90%; /* Adjust width for smaller screens */
+        margin: 0 auto; /* Center the text block */
+        margin-bottom: 5%;
+    }
+}
+ 
